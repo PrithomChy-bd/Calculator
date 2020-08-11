@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(48, 47, 47, 0.3), rgba(48, 47, 47, 0.3)) ,url(image/pexels-black-ice-1314543.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.calc-body{
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow:  2px 2px 8px rgba(0, 0, 0, 0.541);
+    width: 320px;
+    height: 500px;
+    margin: 0 auto;
+    top: 50px;
+    position: relative;
+}
+.result{
+    background-color: #be4939;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+    font-size: 2.5rem;
+    text-align: right;
+}
+.buttons button{
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    border-width: 0;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+
+}
+.buttons button:hover{
+    background-color: #e0e0e0;
+}
+.buttons button:active{
+    background-color: #bdbdbd;
+}
+.equal{
+    background-color: #be4939;
+}
+

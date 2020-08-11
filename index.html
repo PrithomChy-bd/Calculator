@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Image/icon.png">
+</head>
+<body>
+    <div class="container">
+        <div class="calc-body">
+            <div class="result">
+                <p id="result">0</p>
+            </div>
+            <div class="buttons">
+                
+                    <button>+/-</button>
+                    <button>%</button>
+                    <button>C</button>
+                    <button>DEL</button>
+
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>/</button>
+
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>*</button>
+ 
+                    <button>3</button>
+                    <button>2</button>
+                    <button>1</button>
+                    <button>-</button>
+
+                    <button>.</button>
+                    <button>0</button>
+                    <button class="equal">=</button>
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+    
+
+        <script>
+            function getInputValue(){
+                let input = event.target.innerText;
+                // console.log(input);
+                printValue(input);
+            }
+
+            function printValue(val){
+                let out = document.querySelector('#result');
+                let current = out.innerHTML;
+
+                if(out.innerHTML == '0'){
+                    if (val !='C' && val !='DEL') {
+                        out.innerHTML ='';
+                        out.innerHTML += val;
+                    }
+                }
+
+                else{
+                    if (val =='DEL') {
+                        out.innerHTML = current.slice(0,-1);
+                        if (out.innerHTML.length<=1) {
+                            out.innerHTML = '0';
+                        }
+                    }
+                    if(val !='C'&& val !='DEL' && val !='='){
+                        out.innerHTML += val;
+                    }
+                    if(val =='C'){
+                        out.innerHTML = '0';
+                    }
+
+                    if(val =='='){
+                        let res = out.innerHTML;
+                        out.innerHTML = eval(res);
+                    }
+                }
+            }
+
+            let buttons = document.getElementsByTagName('button');
+            for(let i = 0; i<buttons.length;i++){
+                buttons[i].setAttribute('onclick','getInputValue()');
+            }
+        </script>
+</body>
+</html>
